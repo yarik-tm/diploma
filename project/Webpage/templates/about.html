@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css">
+    <link rel="stylesheet" href="styling/style.css">
+</head>
+
+<body class="about">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="nav-interior">
+      <a class="navbar-brand" href="/">The Happiness Project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class='fas fa-bars'></i></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-primary" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+              <div class="dropdown-menu text-primary" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item text-primary" href="/create">Create Your Own Country</a>
+                <a class="dropdown-item text-primary" href="/add_data">Contribute To Dataset</a>
+                <a class="dropdown-item text-primary" href="/about">About</a>
+              </div>
+          </li>
+        </ul>
+      </div>
+    </div> 
+  </nav>
+
+  <div class="main-plus-sidebar">
+    <main>
+      <h1>Про цей проект</h1>
+      <h2 class="text-primary">Чому ця тема?</h2>
+      <p>Прогнозування щастя є цінним ресурсом. Якби машинне навчання могло передбачити загальне щастя країни на основі певних характеристик цієї країни, ми могли б використовувати цей інструмент, щоб покращити життя в цих країнах або майбутні події. Розуміння того, що робить людей щасливими, значною мірою сприяє функціонуванню суспільства.</p>
+
+      <h2 class="text-primary">Мета</h2>
+      <p>Мета цього проекту полягала в тому, щоб використати раніше зібрані дані про країни та їхні показники щастя, щоб побачити, чи можна передбачити, наскільки щасливим буде хтось у створеній ними країні на основі параметрів, зібраних у вихідних даних. Крім того, була задача дати користувачам можливість додавати власні дані до нашого набору даних, щоб продовжити навчання моделі машинного навчання для більш точних прогнозів</p>
+      
+
+      <h2 class="text-primary">Машинне навчання: навчання та тестування</h2>
+      <h3 class="text-success">Навчання</h3>
+      <p>Дані, використані для навчання цього алгоритму машинного навчання, взяті зі  <a href='https://worldhappiness.report/'>звіту про щастя у світі.</a>. Дані були переглянуті та оброблені за допомогою очищення даних, щоб забезпечити якісне введення даних. Оскільки лінійна регресія не потребує типового розподілу навчання/тесту 80/20, були використані всі дані для визначення коефіцієнтів регресії.</p>
+      <h3 class="text-success">Тестування</h3>
+      <p>Для лінійної регресії точність алгоритму передбачення можна виміряти значенням R2<sup>2</sup> value: 0.647</p>
+
+      <h2 class="text-primary">Проблеми проекту</h2>
+      <h3 class="text-success">Очищення даних</h3>
+      <p>Очищення даних складалося з кількох етапів:</p>
+      <ul>
+        <li>Імпорт</li>
+        <li>Виправлення назви стовпця</li>
+        <li>Перетворення всіх рядків у нижній регістр</li>
+        <li>Нормалізація розрахункових значень</li>
+        <li>Конкатенація джерел даних</li>
+        <li>Видалення рядків із відсутніми даними</li>
+        <li>Скидання індикаторів</li>
+      </ul>
+
+      <h3 class="text-success">Моделі машинного навчання</h3>
+      <p>У цьому проекті розглядалися 2 можливості алгоритму машинного навчання:  Linear Regression & Elastic Net. Точність передбачення з обома алгоритмами була подібною. Для простоти було обрано лінійну регресію. Точність прогнозу була найкращою – 65%. Наявність даних про учасників замість країн, дає більше гнучкості.</p>
+
+      <h2 class="text-primary">Походження даних: The World Happiness Reports</h2>
+      <p><a href="https://worldhappiness.report/">The World Happiness Reports</a> — це колекція щорічних звітів, у яких розглядаються країни, деякі національні статистичні дані (ВВП, очікувана тривалість життя тощо) та відповіді населення (довіра до уряду, щедрість, щастя тощо) для створення «рейтингу» щастя ( або бал) для кожної країни.</p>
+
+    </main>
+
+  
+  </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
