@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css">
-    <link rel="stylesheet" href="/styling/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
+    
+    <script
+    src="{{ url_for('static', filename='js/create.js') }}"
+    type="module"
+    ></script>
 </head>
 
 <body>
@@ -36,22 +40,22 @@
     <main>
         <div class="container">
             <div class="row">
-                <h1>Create your own country here and we'll tell you how happy you'll be!</h1>
+                <h1>Створіть свою власну країну, і ШІ скаже вам, наскільки ви будете щасливі!</h1>
                 <hr>
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-3 col-xl-3">
-                    <h3>Instructions</h3>
+                    <h3>Інструкції</h3>
                     <hr style="background-color:#afafaf">
-                    <p class="text-danger">1. You have an allowance to distribute out to each category as you see fit.</p>
-                    <p class="text-warning">2. Once you spend your allowance, submit your selections and we'll return the happiness score for your country.  </p>
-                    <p class="text-primary">3. We'll also show you the closest country to yours and how you compare!</p>
-                    <p class="text-success">4. Use the reset button if you want to try again</p>
-                    <p class="text-info">Have fun!</p>
+                    <p class="text-danger">1. У вас є бали, які ви можете розподілити по кожній категорії, як вважаєте за потрібне.</p>
+                    <p class="text-warning">2. Коли ви витратите цю суму, надішліть свій вибір, і вам певернеться оцінка щастя для вашої країни.  </p>
+                    <p class="text-primary">3. Вам також буде показано найближчу країну до вашої та її порівняння!</p>
+                    <p class="text-success">4. Скористайтеся кнопкою оновлення сторінки, якщо хочете повторити спробу</p>
+                    <p class="text-info">Творіть!</p>
                     <hr style="background-color:#afafaf">
                     <!-- </div>
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-2"></div> -->
-                    <h3>Allowance</h3>
+                    <h3>Дозволено</h3>
                     <h2 id="allowance" value="40" min="0" max="40">40</h2>
                 </div>
                 <div class="col-md-12 col-lg-9 col-xl-9">
@@ -60,43 +64,43 @@
                     <div class="scorebuttons">
                         <div class="scorebuttons__grid">
                             <div class="scorebuttons__grid-item">
-                                <label>Economy GDP per Capita</label>
+                                <label>Економіка ВВП на душу населення</label>
                                 <input id="economy_gdp_per_capita" type="number" value=0 min=0 max=40>
                             </div>
                             <div class="scorebuttons__grid-item">
-                                <label>Health Life Expectancy</label>
+                                <label>Очікувана тривалість життя</label>
                                 <input id="health_life_expectancy" type="number" value=0 min=0 max=40>
                             </div>
                             <div class="scorebuttons__grid-item">
-                                <label>Freedom</label>
+                                <label>Свобода</label>
                                 <input id="freedom" type="number" value=0 min=0 max=40>
                             </div>
                             <div class="scorebuttons__grid-item">
-                                <label>Trust Government Corruption</label>
+                                <label>Індекс корупції</label>
                                 <input id="trust_government_corruption" type="number" value=0 min=0 max=40>
                             </div>
                             <div class="scorebuttons__grid-item max40">
-                                <label>Generosity</label>
+                                <label>Щедрість</label>
                                 <input id="generosity" type="number" value=0 min=0 max=40>
                             </div>
                             <div class="scorebuttons__grid-item">
-                                <button id="submit">Submit</button>
+                                <button id="submit">Надіслати</button>
                             </div>
                         </div>
                         <div id="message" class="scorebuttons__message">
-                            <p>Please use exactly 40 points before you press Submit. Thank you!</p>
+                            <p>Будь ласка, використайте рівно 40 балів, перш ніж натиснути «Надіслати». Дякую!</p>
                         </div>
                     </div>
 
                 </div>
                 <div class="row results" style="justify-content:center; width:100%; text-align:center; visibility:hidden;">
                     <div class="col-sm-12 col-md-6">
-                        <h3>Your Country Happiness Score:</h3>
+                        <h3>Оцінка щастя вашої країни:</h3>
                         <hr>
                         <h2 id="happscore">?</h2>
                     </div>
                     <div class="col-sm-12 col-md-6">
-                        <h3>Closest Country</h3>
+                        <h3>Найближча країна</h3>
                         <hr>
                         <h2 id="country">?</h2>
                     </div>
@@ -116,5 +120,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="/scripts/create.js"></script>
+    <!-- <script src="/scripts/create.js"></script> -->
 </body>

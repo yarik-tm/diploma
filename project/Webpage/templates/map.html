@@ -10,7 +10,7 @@
         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
         crossorigin="" />
     
-    <link rel="stylesheet" href="static/CSS/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <style>
         body {
             padding: 0;
@@ -24,6 +24,11 @@
         }
     </style>
     <script type="text/javascript" src="static/js/mapbox_config.js"></script>
+    <script
+    src="{{ url_for('static', filename='js/map.js') }}"
+    type="module"
+    ></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization&callback=initMap"></script>
 </head>
 
 <body>
@@ -46,7 +51,7 @@
         
         <script type='text/javascript'>var divElement = document.getElementById('viz1621178977834');var vizElement = divElement.getElementsByTagName('object')[0];vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';var scriptElement = document.createElement('script');scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
     
-    The div where we will inject our map
+    <!-- The div where we will inject our map -->
     <div id="map"></div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
@@ -56,8 +61,8 @@
         crossorigin=""></script>
 
     <!-- JS -->
-    <script type="text/javascript" src="scripts/map.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization&callback=initMap"></script>
+    <!-- <script type="text/javascript" src="scripts/map.js"></script> -->
+    
 </body>
 
 </html>

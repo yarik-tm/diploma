@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css">
-    <link rel="stylesheet" href="/styling/style.css">
+    <script
+        src="{{ url_for('static', filename='js/index.js') }}"
+        type="module"
+    ></script>
 
 </head>
 
 <body>
           <nav class="navbar navbar-dark bg-dark-alt">
-            <h1 class="text-primary" style="text-align:center; width:100%; background-color: #002b36;"> Welcome to the Happiness Project Site!</h1>
+            <h1 class="text-primary" style="text-align:center; width:100%; background-color: #002b36;"> Вітаю на сайті проекту "Система прогнозування рівня щастя населення країн світу"!</h1>
         </nav>
 
         <div class="background covered-img">
@@ -21,30 +25,30 @@
           <div class="cardholder">
             <div class="card border-primary md-3" style="max-width: 20rem;">
               <div class="card-body">
-                <h4 class="card-title text-primary">Behind the scenes of this project.</h4>
-                <p class="card-text">What is this project about? What data was used? What machine learning model was choosen and why? </p>
-                <a href="/about" class="btn btn-primary btn-lg">About</a>
+                <h4 class="card-title text-primary">Короткі відомості.</h4>
+                <p class="card-text">Про що цей проект? Які дані були використані? Яку модель машинного навчання було обрано і чому? </p>
+                <a href="/about" class="btn btn-primary btn-lg">Про проект</a>
               </div>
             </div>
 
             <div class="card border-primary md-3" style="max-width: 20rem;">
               <div class="card-body">
-                <h4 class="card-title text-primary">Create your own country, see your happiness score!</h4>
-                <p class="card-text">Input some data about your country and we'll tell you how happy your country will be!</p>
-                <a href="/create" class="btn btn-primary btn-lg">Create my own country!</a>
+                <h4 class="card-title text-primary">Створіть власну країну, подивіться свій бал щастя!</h4>
+                <p class="card-text">Введіть деякі дані про свою країну, і ви побачете, наскільки щасливою буде ваша країна!</p>
+                <a href="/create" class="btn btn-primary btn-lg">Створити власну країну!</a>
               </div>
             </div>
 
             <div class="card border-primary md-3" style="max-width: 20rem;">
               <div class="card-body">
-                <h4 class="card-title text-primary">Add to dataset, help the machine learn!</h4>
-                <p class="card-text">The machine must be fed! Here you can input your real life data to help machine learning get better.</p>
-                <a href="/add_data" class="btn btn-primary btn-lg">Feed the Machine</a>
+                <h4 class="card-title text-primary">Додайте до набору даних, допоможіть машині навчитися!</h4>
+                <p class="card-text">Машину треба годувати! Тут ви можете ввести свої реальні дані, щоб покращити машинне навчання.</p>
+                <a href="/add_data" class="btn btn-primary btn-lg">Додати дані</a>
               </div>
             </div>
                   <iframe src="https://public.tableau.com/views/world-happiness_16211789575120/Dashboard1?:showVizHome=no&:embed=true" width="700" height="500"></iframe>
 
-                  <img class="card border-primary md-3" src="images/map-static.PNG" alt="happiness score by country" style="max-width: 700px;">
+                  <!-- <img class="card border-primary md-3" src="static/images/map-static.PNG" alt="happiness score by country" style="max-width: 700px;"> -->
             </div>
           </div>
           

@@ -13,14 +13,14 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, insert
 
-# From Heroku credentials
-# username = "wnpdgutwqozkwm" 
-# password = '490a8dd6d0a3f6a6c381300a185b23a3c3329d3bacc1d3717a5bf68e7351cd90'
+
+
 Base = automap_base()
 
 engine = create_engine('postgresql://postgres:rootroot@[::1]:5432/userdb')
 
 Base.prepare(engine, reflect=True)
+#Base.prepare(engine, autoload_with=engine)
 
 
 app = Flask(__name__)
@@ -95,7 +95,7 @@ def get_pred_happiness(econ_gdp, life_exp, freedom, govt_trust, generosity):
 
 
    # determine nearest country by happiness score
-   with open('data/country_happiness_score.json') as f:
+   with open('static/data/country_happiness_score.json') as f:
       data = json.load(f)
    nearest = "USA"
    start = 10
@@ -138,7 +138,7 @@ def store_FTM(cntry, howhapp, frdm, govt_trust, generosity):
    
 
    # store countries only for dropdown
-   with open('data\country_happiness_score.json') as f:
+   with open('static\data\country_happiness_score.json') as f:
       data = json.load(f)
 
    countries = []

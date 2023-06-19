@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/solar/bootstrap.min.css">
-  <link rel="stylesheet" href="styling/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script
+    src="{{ url_for('static', filename='js/add_data.js') }}"
+    type="module"
+    ></script>
 
 </head>
 
@@ -39,46 +43,45 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1>Machine learning requires us to feed the machine!</h1>
+        <h1>Машинне навчання вимагає, щоб ми годували машину!</h1>
         <hr>
-        <p>Please answer the following questions as honestly and
-          completely as possible to help our
-          fancy smancy AI get super smart (and maybe take over the world one day)</p>
+        <p>Будь ласка, дайте відповідь на наступні запитання за допомогою п'ятибальної шкали якомога чесніше та повніше, щоб допомогти  
+           штучному інтелекту стати надзвичайно розумним (і, можливо, одного разу захопити світ)</p>
       </div>
     </div>
 
     <div class="scorebuttons">
       <div class="scorebuttons__grid">
         <div class="scorebuttons__grid-item">
-          <label>Select your country:</label>
+          <label>Виберіть свою країну:</label>
           <select id="selcont"></select>
         </div>
         <div class="scorebuttons__grid-item">
-          <label>Trust Government Corruption</label>
+          <label>Індекс корупції</label>
           <select id="govt"></select>
         </div>
         <div class="scorebuttons__grid-item">
-          <label>Freedom</label>
+          <label>Свобода</label>
           <select id="free"></select>
         </div>
         <div class="scorebuttons__grid-item">
-          <label>How Happy Are You?</label>
+          <label>Наскільки ви зараз щасливі?</label>
           <select id="howhapp"></select>
         </div>
         <div class="scorebuttons__grid-item">
-          <label>Generosity</label>
+          <label>Щедрість</label>
           <select id="gen"></select>
         </div>
         <div class="scorebuttons__grid-item">
-          <button id="newentry">Submit</button>
+          <button id="newentry">Надіслати</button>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12" id="submitmessage" style="visibility: hidden;">
-        <h2>Thank you for contributing to our project!</h2>
+        <h2>Дякую за внесок у проект!</h2>
         <hr>
-        <p>See how you compare to your country's average over the years.</p>
+        <p>Подивіться, як ви порівнюєтеся із середнім показником у вашій країні за останні роки.</p>
       </div>
       <div class="col-sm-12">
         <div id="timeplot"></div>
@@ -98,5 +101,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
-    <script src="scripts/add_data.js"></script>
+    <!-- <script src="scripts/add_data.js"></script> -->
 </body>
